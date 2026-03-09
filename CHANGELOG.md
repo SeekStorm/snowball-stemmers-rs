@@ -1,0 +1,45 @@
+## [1.0.0] - 2026-03-09
+
+### Initial Release
+
+- snowball_env.rs update to Snowball 3.0.0
+- Stemmers update to Snowball 3.0.0
+- Language support for
+  - Arabic
+  - Armenian
+  - Basque
+  - Catalan
+  - Czech,
+  - Danish
+  - Dutch
+  - DutchPorter
+  - English
+  - Esperanto
+  - Estonian
+  - Finnish
+  - French
+  - German
+  - Greek
+  - Hindi
+  - Hungarian
+  - Indonesian
+  - Irish
+  - Italian
+  - Lithuanian
+  - Lovins
+  - Nepali
+  - Norwegian
+  - Persian
+  - Polish
+  - Porter
+  - Portuguese
+  - Romanian
+  - Russian
+  - Serbian
+  - Sesotho
+  - Spanish
+  - Swedish
+  - Tamil
+  - Turkish
+  - Ukrainian
+  - Yiddish

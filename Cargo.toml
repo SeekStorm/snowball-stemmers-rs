@@ -1,0 +1,14 @@
+[package]
+name = "snowball_stemmers_rs"
+version = "1.0.0"
+authors = ["Wolf Garbe <wolf.garbe@seekstorm.com>"]
+description = "A rust implementation of some popular snowball stemming algorithms"
+repository = "https://github.com/SeekStorm/snowball-stemmers-rs"
+readme = "README.md"
+keywords = ["snowball", "stemming", "information", "retrieval", "language"]
+license = "MIT"
+edition = "2024"
+
+[dependencies]
+serde = "^1.0"
+serde_derive = "^1.0"
