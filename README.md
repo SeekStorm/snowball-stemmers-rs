@@ -1,4 +1,4 @@
-# porter_stemmers_rs
+# snowball_stemmers_rs
 
 Snowball_stemmers_rs implements the stemmer algorithms from the [snowball project](http://snowballstem.org/) which are compiled to Rust using the rust-backend of the [snowball compiler](https://github.com/snowballstem/snowball).
 
