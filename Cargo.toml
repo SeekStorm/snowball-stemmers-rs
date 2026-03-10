@@ -1,12 +1,14 @@
 [package]
 name = "snowball_stemmers_rs"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Wolf Garbe <wolf.garbe@seekstorm.com>"]
-description = "A rust implementation of some popular snowball stemming algorithms"
+license = "MIT"
+keywords = ["snowball", "stemming", "information", "retrieval", "language"]
+categories = ["data-structures"]
+description = "A Rust implementation of all Snowball stemming algorithms"
+documentation = "https://docs.rs/snowball_stemmers_rs/"
 repository = "https://github.com/SeekStorm/snowball-stemmers-rs"
 readme = "README.md"
-keywords = ["snowball", "stemming", "information", "retrieval", "language"]
-license = "MIT"
 edition = "2024"
 
 [dependencies]

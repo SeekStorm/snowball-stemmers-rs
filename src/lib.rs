@@ -17,7 +17,7 @@
 //!
 //! fn main() {
 //!    let en_stemmer = Stemmer::create(Algorithm::English);
-//!    assert_eq!(en_stemmer.stem("fruitlessly"), "fruitless");
+//!    assert_eq!(en_stemmer.stem("fishing"), "fish");
 //! }
 //! ```
 extern crate serde;
