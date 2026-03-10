@@ -1,5 +1,11 @@
 # snowball_stemmers_rs
 
+[![Crates.io](https://img.shields.io/crates/v/snowball_stemmers_rs.svg)](https://crates.io/crates/snowball_stemmers_rs)
+[![Downloads](https://img.shields.io/crates/d/snowball_stemmers_rs.svg?style=flat-square)](https://crates.io/crates/snowball_stemmers_rs)
+[![Documentation](https://docs.rs/snowball_stemmers_rs/badge.svg)](https://docs.rs/snowball_stemmers_rs)
+[![MIT License](https://img.shields.io/github/license/SeekStorm/snowball-stemmers-rs.svg)](https://github.com/SeekStorm/snowball-stemmers-rs/blob/main/LICENSE)
+
+
 Snowball_stemmers_rs implements the stemmer algorithms from the [snowball project](http://snowballstem.org/) which are compiled to Rust using the rust-backend of the [snowball compiler](https://github.com/snowballstem/snowball).
 
 # Supported Languages/Algorithms
