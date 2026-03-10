@@ -14,7 +14,7 @@ Snowball_stemmers_rs implements the stemmer algorithms from the [snowball projec
 -   Armenian
 -   Basque
 -   Catalan
--   Czech,
+-   Czech
 -   Danish
 -   Dutch
 -   DutchPorter
