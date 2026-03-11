@@ -1,8 +1,8 @@
-//! This library provides rust implementations for some stemmer algorithms
-//! written in the [snowball language](https://snowballstem.org/).
+//! This library contains rust implementations for all stemmer algorithms
+//! from the [snowball language](https://snowballstem.org/).
 //!
 //!
-//! All algorithms expect the input to already be lowercased.
+//! All algorithms expect the input in lower-case.
 //!
 //! # Usage
 //! ```toml
@@ -31,8 +31,8 @@ mod snowball;
 use snowball::algorithms;
 use snowball::SnowballEnv;
 
-/// Enum of all supported algorithms.
-/// Check the [Snowball-Website](https://snowballstem.org/) for details.
+/// Supported algorithms/languages.
+/// See the [Snowball-Website](https://snowballstem.org/) for details.
 #[derive(Debug, Serialize, Deserialize, Eq, PartialEq, Copy, Clone)]
 pub enum Algorithm {
     Arabic,
@@ -75,13 +75,13 @@ pub enum Algorithm {
     Yiddish,
 }
 
-/// Interface around the Snowball stemmer implementation
+/// Snowball stemmer implementation
 pub struct Stemmer {
     stemmer: fn(&mut SnowballEnv) -> bool,
 }
 
 impl Stemmer {
-    /// Create a new stemmer from an algorithm
+    /// Create a stemmer for an algorithm/language
     pub fn create(lang: Algorithm) -> Self {
         match lang {
             Algorithm::Arabic => Stemmer {
@@ -201,7 +201,7 @@ impl Stemmer {
         }
     }
 
-    /// Stem a single word, the input is expected to be in lowercase.
+    /// Stem a single word, with the input in lower-case.
     pub fn stem<'a>(&self, input: &'a str) -> Cow<'a, str> {
         let mut env = SnowballEnv::create(input);
         (self.stemmer)(&mut env);
