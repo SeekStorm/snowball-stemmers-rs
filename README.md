@@ -6,7 +6,7 @@
 [![MIT License](https://img.shields.io/github/license/SeekStorm/snowball-stemmers-rs.svg)](https://github.com/SeekStorm/snowball-stemmers-rs/blob/main/LICENSE)
 
 
-Snowball_stemmers_rs implements the stemmer algorithms from the [snowball project](http://snowballstem.org/) which are compiled to Rust using the rust-backend of the [snowball compiler](https://github.com/snowballstem/snowball).
+Snowball_stemmers_rs implements all 39 algorithms from [Snowball 3.2.0](https://snowballstem.org/), compiled to Rust using the Rust backend of the [Snowball compiler](https://github.com/snowballstem/snowball).
 
 # Supported Languages/Algorithms
 
@@ -18,6 +18,7 @@ Snowball_stemmers_rs implements the stemmer algorithms from the [snowball projec
 -   Danish
 -   Dutch
 -   DutchPorter
+-   EarlyModernEnglish
 -   English
 -   Esperanto
 -   Estonian
@@ -72,7 +73,7 @@ To create an additional stemmer language for Rust from the official Snowball rep
 The Snowball compiler is written in ISO C. You first need to build it to generate the executable that performs the translation. 
 
 Clone the repository:
-`git clone https://github.com/snowballstem/snowball.git`
+`git clone --branch v3.2.0 --depth 1 https://github.com/snowballstem/snowball.git`
 
 Compile the compiler:
 Navigate to the root and run `make`. This produces the snowball executable. 
@@ -83,4 +84,41 @@ The **algorithm definition** is located at `algorithms/additional_language.sbl`.
 Command:
 `./snowball algorithms/additional_language.sbl -rust -o additional_language`
 
+When integrating the output into this crate, change `use snowball::` imports to
+`use crate::snowball::` and register the module and public `Algorithm` variant.
 
+# Updating the vendored stemmers
+
+The algorithm definitions, Rust runtime, and generated implementations are pinned
+to Snowball **3.2.0**, commit `6389c79f91cd67ed2de3ebdcf84ec8c2d2d23c11`.
+Regeneration requires Git, a C compiler, Make, Python 3, and rustfmt:
+
+```sh
+git clone --branch v3.2.0 --depth 1 https://github.com/snowballstem/snowball.git ../snowball
+python3 scripts/generate.py ../snowball
+cargo test
+cargo fmt --check
+```
+
+The generator checks the upstream revision, copies the algorithm definitions and
+runtime, generates all 39 algorithms, adapts imports for this crate, and formats
+the generated Rust. When adding an algorithm, also add it to `Algorithm` and
+`Stemmer::create` in `src/lib.rs` and to the corpus test's algorithm list.
+
+To run the full upstream vocabulary checks, use the snowball-data revision from
+2026-10-16, immediately before the Snowball 3.2.0 release. The corpus stays outside
+this repository; some large files require `gzip` to read.
+
+```sh
+git clone https://github.com/snowballstem/snowball-data.git ../snowball-data
+git -C ../snowball-data checkout 019921c3a41c2b70063ee3feb215a00c8e594597
+SNOWBALL_DATA=../snowball-data cargo test --release --test corpus -- --ignored --nocapture
+```
+
+The test verifies this data revision and compares every word with its expected
+stem for every supported algorithm. Normal `cargo test` runs the small regression
+tests without requiring an external corpus or network access.
+
+Stemming results can change when upgrading Snowball. Applications that persist
+stemmed search indexes should rebuild affected indexes so that indexed terms and
+queries use the same stemming rules.
