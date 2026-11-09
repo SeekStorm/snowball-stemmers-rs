@@ -6,6 +6,7 @@ pub mod czech;
 pub mod danish;
 pub mod dutch;
 pub mod dutch_porter;
+pub mod earlymodernenglish;
 pub mod english;
 pub mod esperanto;
 pub mod estonian;

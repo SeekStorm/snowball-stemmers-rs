@@ -82,14 +82,32 @@ backwardmode (
 
   define palatalise_e as (
     [substring] among (
-      'c' (<- 'k')
+      // -c -> -k
+      'c'
+        (<- 'k')
+      'nc' // e.g. finance
+      'avc' // e.g. dravce
+      'ovc' // e.g. jalovce
+        ()
+      '{i'}nc' // e.g. podmínce
+        (<- '{i'}nk')
     )
   )
 
   define palatalise_i as (
     [substring] among (
-      'c' (<- 'k')
+      // -c -> -k
+      'c'
+        (<- 'k')
+      'nc' // e.g. financí
+      'avc' // e.g. nástavci
+      'ovc' // e.g. pískovci
+        ()
+      '{i'}nc' // e.g. Gruzínci
+        (<- '{i'}nk')
+
       '{cv}t' (<- 'ck')
+
       // -št -> -sk
       '{sv}t' // e.g. čeština
         (<-'sk')
@@ -130,10 +148,31 @@ backwardmode (
       (
         delete
       )
-      'e' 'ech' 'em' 'emi' 'ete' 'etem'
+      'e' 'ech' 'em' 'emi'
       (
         delete
         try palatalise_e
+      )
+      'ete' 'eti' 'etem'
+      (
+        // t-stem neuter nouns
+        among (
+          '{cv}'  // e.g. dvojč-etem
+          'l'     // e.g. batol-ete
+          '{rv}'  // e.g. zvíř-ete
+          's'     // e.g. pras-ete
+          '{zv}'  // e.g. páž-ete
+              (delete)
+          'e{cv}' // e.g. pečet-i
+          'tl'    // e.g. atlet-i
+          'es'    // e.g. deset-i
+          ''
+              (
+                // Remove -e, -i, or -em; stem now ends -et so no palatalise
+                // step is needed.
+                <-'et'
+              )
+        )
       )
       'eb'
       ( // Conflate e.g. skladeb with skladba, skladbě, skladby, etc.
@@ -167,7 +206,7 @@ backwardmode (
         <-'n' // -eň -> -n not -ň
       )
       // -eš can also lose the -e- but this seems very uncommon - the only
-      // example I've seen is Aleš (a male given name or diminuitive name)
+      // example I've seen is Aleš (a male given name or diminutive name)
       // but we require 3 characters before R1 so this won't be considered
       // for stemming.
       //
@@ -214,9 +253,3 @@ define stem as (
     do possessive_suffix
   )
 )
-
-// Ljiljana Dolamic and Jacques Savoy. 2009.
-// Indexing and stemming approaches for the Czech language.
-// Inf. Process. Manage. 45, 6 (November 2009), 714-720.
-// based on Java code by Ljiljana Dolamic:
-// http://members.unine.ch/jacques.savoy/clef/CzechStemmerLight.txt
