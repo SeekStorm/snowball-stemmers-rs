@@ -1,4 +1,4 @@
-//! Generated from persian.sbl by Snowball 3.0.0 - https://snowballstem.org/
+//! Generated from persian.sbl by Snowball 3.2.0 - https://snowballstem.org/
 
 #![allow(non_snake_case)]
 #![allow(non_upper_case_globals)]
@@ -9,783 +9,445 @@ use crate::snowball::Among;
 use crate::snowball::SnowballEnv;
 
 #[derive(Clone)]
-struct Context {
-    i_temp_mark: i32,
-    i_start_mark: i32,
-    b_saw_inf_or_part: bool,
-    b_saw_present_prefix: bool,
-    b_freeze_pass: bool,
-    b_protect_lex_an: bool,
-    b_changed: bool,
-}
+struct Context {}
 
-static A_0: &'static [Among<Context>; 12] = &[
+static A_0: &'static [Among<Context>; 11] = &[
     Among("", -1, 7, None),
     Among(" ", 0, 6, None),
-    Among("\u{0623}", 0, 4, None),
-    Among("\u{0624}", 0, 5, None),
-    Among("\u{0625}", 0, 4, None),
-    Among("\u{0626}", 0, 2, None),
-    Among("\u{0629}", 0, 3, None),
-    Among("\u{0643}", 0, 1, None),
-    Among("\u{064A}", 0, 2, None),
-    Among("\u{06C1}", 0, 3, None),
-    Among("\u{200C}", 0, 6, None),
+    Among("\u{623}", 0, 4, None),
+    Among("\u{624}", 0, 5, None),
+    Among("\u{625}", 0, 4, None),
+    Among("\u{626}", 0, 2, None),
+    Among("\u{629}", 0, 3, None),
+    Among("\u{643}", 0, 1, None),
+    Among("\u{64A}", 0, 2, None),
+    Among("\u{6C1}", 0, 3, None),
     Among("\u{200D}", 0, 6, None),
 ];
 
-static A_1: &'static [Among<Context>; 4] = &[
-    Among("\u{0628}\u{06CC}", -1, 3, None),
-    Among("\u{0645}\u{06CC}", -1, 2, None),
-    Among("\u{0646}\u{0627}", -1, 3, None),
-    Among("\u{0646}\u{0645}\u{06CC}", -1, 1, None),
+static A_1: &'static [Among<Context>; 2] = &[
+    Among("\u{645}\u{6CC}\u{200C}", -1, 2, None),
+    Among("\u{646}\u{645}\u{6CC}\u{200C}", -1, 1, None),
 ];
 
-static A_2: &'static [Among<Context>; 3] = &[
-    Among("\u{0633}\u{062A}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{0631}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{0633}\u{0627}\u{0646}", -1, 1, None),
+static A_2: &'static [Among<Context>; 4] = &[
+    Among("\u{648}\u{627}\u{646}", -1, -1, None),
+    Among("\u{633}\u{62A}\u{627}\u{646}", -1, -1, None),
+    Among("\u{631}\u{627}\u{646}", -1, -1, None),
+    Among("\u{633}\u{627}\u{646}", -1, -1, None),
 ];
 
-static A_3: &'static [Among<Context>; 9] = &[
-    Among("\u{0622}\u{0644}\u{0645}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{0627}\u{06CC}\u{0645}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{067E}\u{06CC}\u{0645}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{0631}\u{0645}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{062F}\u{0631}\u{0645}\u{0627}\u{0646}", 3, 1, None),
-    Among("\u{062A}\u{0647}\u{0631}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{0627}\u{06CC}\u{0631}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{0627}\u{0646}\u{0633}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{0622}\u{0633}\u{0627}\u{0646}", -1, 1, None),
-];
-
-static A_4: &'static [Among<Context>; 3] = &[
+static A_3: &'static [Among<Context>; 33] = &[
+    Among("\u{6AF}\u{6CC}\u{644}\u{627}\u{646}", -1, 1, None),
+    Among("\u{622}\u{644}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{645}\u{633}\u{644}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{633}\u{644}\u{6CC}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{627}\u{6CC}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{67E}\u{6CC}\u{645}\u{627}\u{646}", -1, 1, None),
     Among(
-        "\u{0627}\u{0633}\u{0627}\u{062A}\u{06CC}\u{062F}",
-        -1,
-        3,
-        None,
-    ),
-    Among("\u{0627}\u{062E}\u{0628}\u{0627}\u{0631}", -1, 1, None),
-    Among("\u{062E}\u{0648}\u{0627}\u{0633}", -1, 2, None),
-];
-
-static A_5: &'static [Among<Context>; 9] = &[
-    Among("\u{0645}", -1, 3, None),
-    Among("\u{0627}\u{0645}", 0, 1, None),
-    Among("\u{0645}\u{0627}\u{0646}", -1, 2, None),
-    Among("\u{062A}\u{0627}\u{0646}", -1, 2, None),
-    Among("\u{0634}\u{0627}\u{0646}", -1, 2, None),
-    Among("\u{062A}", -1, 3, None),
-    Among("\u{0627}\u{062A}", 5, 1, None),
-    Among("\u{0634}", -1, 3, None),
-    Among("\u{0627}\u{0634}", 7, 1, None),
-];
-
-static A_6: &'static [Among<Context>; 9] = &[
-    Among("\u{06CC}\u{0646}", -1, 3, None),
-    Among("\u{0627}\u{0646}", -1, 4, None),
-    Among("\u{06CC}\u{0627}\u{0646}", 1, 1, None),
-    Among("\u{06AF}\u{0627}\u{0646}", 1, 1, None),
-    Among("\u{0627}\u{0646}\u{06CC}", -1, 1, None),
-    Among("\u{0647}\u{0627}\u{06CC}\u{06CC}", -1, 2, None),
-    Among("\u{0647}\u{0627}\u{06CC}", -1, 1, None),
-    Among("\u{0647}\u{0627}", -1, 3, None),
-    Among("\u{0627}\u{062A}", -1, 3, None),
-];
-
-static A_7: &'static [Among<Context>; 6] = &[
-    Among("\u{0628}\u{0627}\u{0646}", -1, 2, None),
-    Among("\u{062F}\u{0627}\u{0646}", -1, 1, None),
-    Among("\u{06AF}\u{0627}\u{0647}", -1, 1, None),
-    Among("\u{06CC}\u{06CC}", -1, 3, None),
-    Among("\u{06AF}\u{06CC}", -1, 3, None),
-    Among("\u{06CC}\u{062A}", -1, 3, None),
-];
-
-static A_8: &'static [Among<Context>; 2] = &[
-    Among("\u{062A}\u{0631}\u{06CC}\u{0646}", -1, 1, None),
-    Among("\u{062A}\u{0631}", -1, 2, None),
-];
-
-static A_9: &'static [Among<Context>; 6] = &[
-    Among("\u{06CC}\u{0646}", -1, 2, None),
-    Among("\u{0627}\u{0646}\u{0647}", -1, 1, None),
-    Among("\u{0646}\u{0627}\u{06A9}", -1, 1, None),
-    Among("\u{0645}\u{0646}\u{062F}", -1, 1, None),
-    Among("\u{0648}\u{0627}\u{0631}", -1, 1, None),
-    Among("\u{06AF}\u{0627}\u{0631}", -1, 1, None),
-];
-
-static A_10: &'static [Among<Context>; 10] = &[
-    Among("\u{0645}", -1, 3, None),
-    Among("\u{06CC}\u{0645}", 0, 2, None),
-    Among("\u{0627}\u{06CC}\u{0645}", 1, 1, None),
-    Among("\u{0627}\u{06CC}", -1, 2, None),
-    Among("\u{0627}\u{0633}\u{062A}", -1, 1, None),
-    Among("\u{062F}", -1, 3, None),
-    Among("\u{0627}\u{0646}\u{062F}", 5, 1, None),
-    Among("\u{06CC}\u{062F}", 5, 2, None),
-    Among("\u{0627}\u{06CC}\u{062F}", 7, 1, None),
-    Among("\u{0627}\u{0633}", -1, 2, None),
-];
-
-static A_11: &'static [Among<Context>; 5] = &[
-    Among("\u{0631}\u{0641}\u{062A}\u{06CC}\u{0645}", -1, 1, None),
-    Among("\u{0631}\u{0641}\u{062A}\u{0645}", -1, 1, None),
-    Among("\u{0631}\u{0641}\u{062A}\u{06CC}", -1, 1, None),
-    Among(
-        "\u{0631}\u{0641}\u{062A}\u{0627}\u{0646}\u{062F}",
+        "\u{633}\u{627}\u{62E}\u{62A}\u{645}\u{627}\u{646}",
         -1,
         1,
         None,
     ),
-    Among("\u{0631}\u{0641}\u{062A}\u{06CC}\u{062F}", -1, 1, None),
+    Among("\u{631}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{642}\u{647}\u{631}\u{645}\u{627}\u{646}", 7, 1, None),
+    Among("\u{6A9}\u{631}\u{645}\u{627}\u{646}", 7, 1, None),
+    Among("\u{62F}\u{631}\u{645}\u{627}\u{646}", 7, 1, None),
+    Among("\u{647}\u{645}\u{632}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{633}\u{627}\u{632}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{622}\u{633}\u{645}\u{627}\u{646}", -1, 1, None),
+    Among("\u{6CC}\u{648}\u{646}\u{627}\u{646}", -1, 1, None),
+    Among("\u{644}\u{628}\u{646}\u{627}\u{646}", -1, 1, None),
+    Among("\u{627}\u{635}\u{641}\u{647}\u{627}\u{646}", -1, 1, None),
+    Among("\u{67E}\u{627}\u{6CC}\u{627}\u{646}", -1, 1, None),
+    Among("\u{628}\u{6CC}\u{627}\u{646}", -1, 1, None),
+    Among("\u{62C}\u{631}\u{6CC}\u{627}\u{646}", -1, 1, None),
+    Among("\u{627}\u{645}\u{6A9}\u{627}\u{646}", -1, 1, None),
+    Among(
+        "\u{622}\u{630}\u{631}\u{628}\u{627}\u{6CC}\u{62C}\u{627}\u{646}",
+        -1,
+        1,
+        None,
+    ),
+    Among("\u{647}\u{645}\u{62F}\u{627}\u{646}", -1, 1, None),
+    Among("\u{62E}\u{627}\u{646}\u{62F}\u{627}\u{646}", -1, 1, None),
+    Among("\u{632}\u{646}\u{62F}\u{627}\u{646}", -1, 1, None),
+    Among("\u{645}\u{6CC}\u{632}\u{627}\u{646}", -1, 1, None),
+    Among(
+        "\u{622}\u{62A}\u{634}\u{641}\u{634}\u{627}\u{646}",
+        -1,
+        1,
+        None,
+    ),
+    Among("\u{646}\u{634}\u{627}\u{646}", -1, 1, None),
+    Among("\u{627}\u{6CC}\u{634}\u{627}\u{646}", -1, 1, None),
+    Among("\u{67E}\u{631}\u{6CC}\u{634}\u{627}\u{646}", -1, 1, None),
+    Among("\u{6A9}\u{647}\u{6A9}\u{634}\u{627}\u{646}", -1, 1, None),
+    Among("\u{62F}\u{631}\u{62E}\u{634}\u{627}\u{646}", -1, 1, None),
+    Among("\u{633}\u{644}\u{637}\u{627}\u{646}", -1, 1, None),
 ];
 
-static A_12: &'static [Among<Context>; 6] = &[
-    Among("\u{0645}", -1, 3, None),
-    Among("\u{06CC}\u{0645}", 0, 2, None),
-    Among("\u{0627}\u{0645}", 0, 2, None),
-    Among("\u{062F}", -1, 3, None),
-    Among("\u{0627}\u{0646}\u{062F}", 3, 1, None),
-    Among("\u{06CC}\u{062F}", 3, 2, None),
+static A_4: &'static [Among<Context>; 2] = &[
+    Among("\u{627}\u{633}\u{627}\u{62A}\u{6CC}\u{62F}", -1, 2, None),
+    Among("\u{627}\u{62E}\u{628}\u{627}\u{631}", -1, 1, None),
 ];
 
-static A_13: &'static [Among<Context>; 2] = &[
-    Among("\u{0627}\u{0646}", -1, 2, None),
-    Among("\u{0647}", -1, 1, None),
+static A_5: &'static [Among<Context>; 22] = &[
+    Among("\u{627}\u{645}", -1, 1, None),
+    Among("\u{6CC}\u{646}", -1, 1, None),
+    Among("\u{62A}\u{631}\u{6CC}\u{646}", 1, 1, None),
+    Among("\u{627}\u{646}", -1, 1, None),
+    Among("\u{6CC}\u{627}\u{646}", 3, 1, None),
+    Among("\u{628}\u{627}\u{646}", 3, 1, None),
+    Among("\u{6AF}\u{627}\u{646}", 3, 1, None),
+    Among("\u{627}\u{646}\u{647}", -1, 1, None),
+    Among("\u{6AF}\u{627}\u{647}", -1, 1, None),
+    Among("\u{627}\u{646}\u{6CC}", -1, 1, None),
+    Among("\u{6CC}\u{6CC}", -1, 1, None),
+    Among("\u{647}\u{627}\u{6CC}", -1, 1, None),
+    Among("\u{6AF}\u{6CC}", -1, 1, None),
+    Among("\u{647}\u{627}", -1, 1, None),
+    Among("\u{646}\u{627}\u{6A9}", -1, 1, None),
+    Among("\u{6CC}\u{62A}", -1, 1, None),
+    Among("\u{627}\u{62A}", -1, 1, None),
+    Among("\u{645}\u{646}\u{62F}", -1, 1, None),
+    Among("\u{648}\u{627}\u{631}", -1, 1, None),
+    Among("\u{6AF}\u{627}\u{631}", -1, 1, None),
+    Among("\u{62A}\u{631}", -1, 2, None),
+    Among("\u{627}\u{634}", -1, 1, None),
 ];
 
-fn r_Normalize_Characters(env: &mut SnowballEnv, context: &mut Context) -> bool {
+static A_6: &'static [Among<Context>; 8] = &[
+    Among("\u{6CC}\u{645}", -1, 1, None),
+    Among("\u{627}\u{6CC}\u{645}", 0, 1, None),
+    Among("\u{627}\u{6CC}", -1, 1, None),
+    Among("\u{627}\u{633}\u{62A}", -1, 1, None),
+    Among("\u{627}\u{646}\u{62F}", -1, 1, None),
+    Among("\u{6CC}\u{62F}", -1, 1, None),
+    Among("\u{627}\u{6CC}\u{62F}", 5, 1, None),
+    Among("\u{627}\u{633}", -1, 1, None),
+];
+
+static A_7: &'static [Among<Context>; 15] = &[
+    Among("\u{645}", -1, 1, None),
+    Among("\u{6CC}\u{645}", 0, 1, None),
+    Among("\u{631}\u{641}\u{62A}\u{6CC}\u{645}", 1, 2, None),
+    Among("\u{627}\u{645}", 0, 1, None),
+    Among("\u{631}\u{641}\u{62A}\u{645}", 0, 2, None),
+    Among("\u{627}\u{646}", -1, 3, None),
+    Among("\u{62A}\u{647}", -1, 5, None),
+    Among("\u{62F}\u{647}", -1, 4, None),
+    Among("\u{646}\u{62F}\u{647}", 7, 3, None),
+    Among("\u{631}\u{641}\u{62A}\u{6CC}", -1, 2, None),
+    Among("\u{62F}", -1, 1, None),
+    Among("\u{627}\u{646}\u{62F}", 10, 1, None),
+    Among("\u{631}\u{641}\u{62A}\u{627}\u{646}\u{62F}", 11, 2, None),
+    Among("\u{6CC}\u{62F}", 10, 1, None),
+    Among("\u{631}\u{641}\u{62A}\u{6CC}\u{62F}", 13, 2, None),
+];
+
+pub fn stem(env: &mut SnowballEnv) -> bool {
+    let mut context = &mut Context {};
     let mut among_var;
-    'replab0: loop {
-        let v_1 = env.cursor;
-        'lab1: for _ in 0..1 {
-            env.bra = env.cursor;
-            among_var = env.find_among(A_0, context);
-            env.ket = env.cursor;
-            match among_var {
-                1 => {
-                    env.slice_from("\u{06A9}");
+    let mut i_p1: i32;
+    let mut b_remove_verb_person_endings: bool;
+    let mut b_saw_present_prefix: bool;
+    b_saw_present_prefix = false;
+    let v_1 = env.cursor;
+    'lab0: loop {
+        'replab1: loop {
+            let v_2 = env.cursor;
+            'lab2: for _ in 0..1 {
+                env.bra = env.cursor;
+                among_var = env.find_among(A_0, context);
+                env.ket = env.cursor;
+                match among_var {
+                    1 => {
+                        env.slice_from("\u{6A9}");
+                    }
+                    2 => {
+                        env.slice_from("\u{6CC}");
+                    }
+                    3 => {
+                        env.slice_from("\u{647}");
+                    }
+                    4 => {
+                        env.slice_from("\u{627}");
+                    }
+                    5 => {
+                        env.slice_from("\u{648}");
+                    }
+                    6 => {
+                        env.slice_del();
+                    }
+                    7 => {
+                        if env.cursor >= env.limit {
+                            break 'lab2;
+                        }
+                        env.next_char();
+                    }
+                    _ => (),
                 }
-                2 => {
-                    env.slice_from("\u{06CC}");
+                continue 'replab1;
+            }
+            env.cursor = v_2;
+            break 'replab1;
+        }
+        break 'lab0;
+    }
+    env.cursor = v_1;
+    let v_3 = env.cursor;
+    'lab3: loop {
+        env.bra = env.cursor;
+        if (env.cursor + 6 >= env.limit
+            || (env.current.as_bytes()[(env.cursor + 6) as usize] as u8 != 140 as u8
+                && env.current.as_bytes()[(env.cursor + 6) as usize] as u8 != 226 as u8))
+        {
+            break 'lab3;
+        }
+
+        among_var = env.find_among(A_1, context);
+        if among_var == 0 {
+            break 'lab3;
+        }
+        env.ket = env.cursor;
+        match among_var {
+            1 => {
+                if !env.hop(2) {
+                    break 'lab3;
                 }
-                3 => {
-                    env.slice_from("\u{0647}");
+                b_saw_present_prefix = true;
+            }
+            2 => {
+                if !env.hop(2) {
+                    break 'lab3;
                 }
-                4 => {
-                    env.slice_from("\u{0627}");
-                }
-                5 => {
-                    env.slice_from("\u{0648}");
-                }
-                6 => {
-                    env.slice_del();
-                }
-                7 => {
+                env.slice_del();
+                b_saw_present_prefix = true;
+            }
+            _ => (),
+        }
+        break 'lab3;
+    }
+    env.cursor = v_3;
+    let v_4 = env.cursor;
+    'lab4: loop {
+        'replab5: loop {
+            let v_5 = env.cursor;
+            'lab6: for _ in 0..1 {
+                'golab7: loop {
+                    let v_6 = env.cursor;
+                    'lab8: loop {
+                        env.bra = env.cursor;
+                        if !env.eq_s(&"\u{200C}") {
+                            break 'lab8;
+                        }
+                        env.ket = env.cursor;
+                        env.slice_del();
+                        env.cursor = v_6;
+                        break 'golab7;
+                    }
+                    env.cursor = v_6;
                     if env.cursor >= env.limit {
-                        break 'lab1;
+                        break 'lab6;
                     }
                     env.next_char();
                 }
-                _ => (),
+                continue 'replab5;
             }
-            continue 'replab0;
+            env.cursor = v_5;
+            break 'replab5;
         }
-        env.cursor = v_1;
-        break 'replab0;
+        break 'lab4;
     }
-    return true;
-}
-
-fn r_Strip_Prefix_At_Start(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    context.i_temp_mark = env.cursor;
-    if env.cursor > context.i_start_mark {
-        return false;
-    }
-    env.cursor = context.i_start_mark;
-    env.bra = env.cursor;
-    among_var = env.find_among(A_1, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.ket = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-            context.b_saw_present_prefix = true;
+    env.cursor = v_4;
+    i_p1 = env.limit;
+    let v_7 = env.cursor;
+    'lab9: loop {
+        if !env.hop(3) {
+            break 'lab9;
         }
-        2 => {
-            if (env.current.chars().count() as i32) <= 3 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-            context.b_saw_present_prefix = true;
-        }
-        3 => {
-            if (env.current.chars().count() as i32) <= 3 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        _ => (),
+        i_p1 = env.cursor;
+        break 'lab9;
     }
-    if env.cursor > context.i_temp_mark {
-        return false;
-    }
-    env.cursor = context.i_temp_mark;
-    return true;
-}
-
-fn r_Protect_Lexical_AN(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    context.b_protect_lex_an = false;
-    context.i_temp_mark = env.cursor;
+    env.cursor = v_7;
     env.limit_backward = env.cursor;
     env.cursor = env.limit;
-    'lab0: loop {
-        let v_1 = env.limit - env.cursor;
-        r_AN_LexHash(env, context);
-        env.cursor = env.limit - v_1;
-        break 'lab0;
-    }
-    if (env.cursor - 5 <= env.limit_backward
-        || env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 134 as u8)
-    {
-        return false;
-    }
-
-    if env.find_among_b(A_2, context) == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    context.b_protect_lex_an = true;
-    env.cursor = env.limit_backward;
-    if env.cursor > context.i_temp_mark {
-        return false;
-    }
-    env.cursor = context.i_temp_mark;
-    return true;
-}
-
-fn r_AN_LexHash(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    env.ket = env.cursor;
-    if (env.cursor - 7 <= env.limit_backward
-        || env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 134 as u8)
-    {
-        return false;
-    }
-
-    if env.find_among_b(A_3, context) == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    context.b_protect_lex_an = true;
-    return true;
-}
-
-fn r_N_Hash(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    if (env.cursor - 7 <= env.limit_backward
-        || env.current.as_bytes()[(env.cursor - 1) as usize] as u8 >> 5 != 5 as u8
-        || ((688128 as i32 >> (env.current.as_bytes()[(env.cursor - 1) as usize] as u8 & 0x1f))
-            & 1)
-            == 0)
-    {
-        return false;
-    }
-
-    among_var = env.find_among_b(A_4, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            env.slice_from("\u{062E}\u{0628}\u{0631}");
-            context.b_changed = true;
-        }
-        2 => {
-            env.slice_from("\u{062E}\u{0627}\u{0633}\u{0647}");
-            context.b_changed = true;
-        }
-        3 => {
-            env.slice_from("\u{0627}\u{0633}\u{062A}\u{0627}\u{062F}");
-            context.b_changed = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_V_Hash(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    env.ket = env.cursor;
-    if !env.eq_s_b(&"\u{0627}\u{0633}\u{062A}") {
-        return false;
-    }
-    env.bra = env.cursor;
-    env.slice_from("\u{0647}\u{0633}\u{062A}");
-    context.b_changed = true;
-    return true;
-}
-
-fn r_Noun_Possessive(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    among_var = env.find_among_b(A_5, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        2 => {
-            if (env.current.chars().count() as i32) <= 5 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        3 => {
-            if (env.current.chars().count() as i32) <= 3 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_Noun_Plural(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    among_var = env.find_among_b(A_6, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 5 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        2 => {
-            if (env.current.chars().count() as i32) <= 6 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        3 => {
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        4 => {
-            if context.b_protect_lex_an {
-                return false;
-            }
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_Noun_Other(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    among_var = env.find_among_b(A_7, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 5 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-            context.b_freeze_pass = true;
-        }
-        2 => {
-            if (env.current.chars().count() as i32) <= 5 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        3 => {
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_Stem_Noun(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    'lab0: loop {
-        let v_1 = env.limit - env.cursor;
-        'lab1: loop {
-            if !r_N_Hash(env, context) {
-                break 'lab1;
-            }
-            context.b_freeze_pass = true;
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        'lab2: loop {
-            if !r_Noun_Other(env, context) {
-                break 'lab2;
-            }
-            context.b_freeze_pass = true;
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        'lab3: loop {
-            if !r_Noun_Plural(env, context) {
-                break 'lab3;
-            }
-            context.b_freeze_pass = true;
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        if !r_Noun_Possessive(env, context) {
-            return false;
-        }
-        context.b_freeze_pass = true;
-        break 'lab0;
-    }
-    return true;
-}
-
-fn r_Adjective_Superlative_Comparative(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    if (env.cursor - 3 <= env.limit_backward
-        || (env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 134 as u8
-            && env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 177 as u8))
-    {
-        return false;
-    }
-
-    among_var = env.find_among_b(A_8, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 6 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        2 => {
-            if (env.current.chars().count() as i32) <= 5 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_Adjective_Derivational(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    among_var = env.find_among_b(A_9, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 5 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        2 => {
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_Adjective_Relative(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    env.ket = env.cursor;
-    if !env.eq_s_b(&"\u{06CC}\u{06CC}") {
-        return false;
-    }
-    env.bra = env.cursor;
-    if (env.current.chars().count() as i32) <= 4 {
-        return false;
-    }
-    env.slice_del();
-    context.b_changed = true;
-    return true;
-}
-
-fn r_Stem_Adjective(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    'lab0: loop {
-        let v_1 = env.limit - env.cursor;
-        'lab1: loop {
-            if !r_Adjective_Superlative_Comparative(env, context) {
-                break 'lab1;
-            }
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        'lab2: loop {
-            if !r_Adjective_Derivational(env, context) {
-                break 'lab2;
-            }
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        if !r_Adjective_Relative(env, context) {
-            return false;
-        }
-        break 'lab0;
-    }
-    return true;
-}
-
-fn r_Participle_Clitic_Tails(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    among_var = env.find_among_b(A_10, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 5 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        2 => {
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        3 => {
-            if (env.current.chars().count() as i32) <= 3 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_Verb_Person_Endings(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    //let mut among_var;
-    env.ket = env.cursor;
-    if env.find_among_b(A_11, context) == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    'lab0: loop {
-        let v_1 = env.limit - env.cursor;
-        env.slice_from("\u{0631}\u{0641}\u{062A}");
-        context.b_changed = true;
-        break 'lab0;
-    }
-    return true;
-}
-
-fn r_Verb_Tense_Mood_Markers(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    let mut among_var;
-    env.ket = env.cursor;
-    if (env.cursor - 1 <= env.limit_backward
-        || (env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 134 as u8
-            && env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 135 as u8))
-    {
-        return false;
-    }
-
-    among_var = env.find_among_b(A_13, context);
-    if among_var == 0 {
-        return false;
-    }
-    env.bra = env.cursor;
-    match among_var {
-        1 => {
-            if (env.current.chars().count() as i32) <= 3 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-            context.b_saw_inf_or_part = true;
-        }
-        2 => {
-            if (env.current.chars().count() as i32) <= 4 {
-                return false;
-            }
-            env.slice_del();
-            context.b_changed = true;
-            context.b_saw_inf_or_part = true;
-        }
-        _ => (),
-    }
-    return true;
-}
-
-fn r_Stem_Verb(env: &mut SnowballEnv, context: &mut Context) -> bool {
-    'lab0: loop {
-        let v_1 = env.limit - env.cursor;
-        'lab1: loop {
-            if !r_Participle_Clitic_Tails(env, context) {
-                break 'lab1;
-            }
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        'lab2: loop {
-            if !r_V_Hash(env, context) {
-                break 'lab2;
-            }
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        'lab3: loop {
-            if !r_Verb_Person_Endings(env, context) {
-                break 'lab3;
-            }
-            break 'lab0;
-        }
-        env.cursor = env.limit - v_1;
-        if !r_Verb_Tense_Mood_Markers(env, context) {
-            return false;
-        }
-        break 'lab0;
-    }
-    return true;
-}
-
-pub fn stem(env: &mut SnowballEnv) -> bool {
-    let mut context = &mut Context {
-        i_temp_mark: 0,
-        i_start_mark: 0,
-        b_saw_inf_or_part: false,
-        b_saw_present_prefix: false,
-        b_freeze_pass: false,
-        b_protect_lex_an: false,
-        b_changed: false,
-    };
-    let v_1 = env.cursor;
-    r_Normalize_Characters(env, context);
-    env.cursor = v_1;
-    context.i_start_mark = env.cursor;
-    'replab0: loop {
-        let v_2 = env.cursor;
-        'lab1: for _ in 0..1 {
-            context.b_changed = false;
-            if !r_Strip_Prefix_At_Start(env, context) {
-                break 'lab1;
-            }
-            if !context.b_changed {
-                break 'lab1;
-            }
-            continue 'replab0;
-        }
-        env.cursor = v_2;
-        break 'replab0;
-    }
-    'replab2: loop {
-        let v_3 = env.cursor;
-        'lab3: for _ in 0..1 {
-            context.b_changed = false;
-            context.b_saw_inf_or_part = false;
-            let v_4 = env.cursor;
-            r_Protect_Lexical_AN(env, context);
-            env.cursor = v_4;
-            env.limit_backward = env.cursor;
-            env.cursor = env.limit;
-            context.b_freeze_pass = false;
-            'lab4: loop {
-                let v_5 = env.limit - env.cursor;
-                let v_6 = env.limit - env.cursor;
-                let v_7 = env.limit - env.cursor;
-                r_Stem_Noun(env, context);
-                env.cursor = env.limit - v_7;
-                env.cursor = env.limit - v_6;
-                'lab5: loop {
-                    let v_8 = env.limit - env.cursor;
-                    'lab6: loop {
-                        if !context.b_freeze_pass {
-                            break 'lab6;
-                        }
-                        break 'lab5;
-                    }
-                    env.cursor = env.limit - v_8;
-                    'lab7: loop {
-                        let v_9 = env.limit - env.cursor;
-                        r_Stem_Adjective(env, context);
-                        env.cursor = env.limit - v_9;
-                        break 'lab7;
-                    }
-                    break 'lab5;
+    'replab10: loop {
+        let v_8 = env.limit - env.cursor;
+        'lab11: for _ in 0..1 {
+            let v_9 = env.limit - env.cursor;
+            b_remove_verb_person_endings = false;
+            'lab12: loop {
+                if !b_saw_present_prefix {
+                    break 'lab12;
                 }
-                break 'lab4;
+                b_remove_verb_person_endings = true;
+                break 'lab12;
             }
-            env.cursor = env.limit_backward;
-            if !context.b_changed {
-                break 'lab3;
+            let v_10 = env.limit - env.cursor;
+            'lab13: loop {
+                if (env.cursor - 7 <= env.limit_backward
+                    || env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 134 as u8)
+                {
+                    break 'lab13;
+                }
+
+                if env.find_among_b(A_3, context) == 0 {
+                    break 'lab13;
+                }
+                if env.cursor > env.limit_backward {
+                    break 'lab13;
+                }
+                break 'lab11;
             }
-            continue 'replab2;
+            env.cursor = env.limit - v_10;
+            let v_11 = env.limit - env.cursor;
+            'lab14: loop {
+                if (env.cursor - 5 <= env.limit_backward
+                    || env.current.as_bytes()[(env.cursor - 1) as usize] as u8 != 134 as u8)
+                {
+                    break 'lab14;
+                }
+
+                if env.find_among_b(A_2, context) == 0 {
+                    break 'lab14;
+                }
+                break 'lab11;
+            }
+            env.cursor = env.limit - v_11;
+            'lab15: loop {
+                let v_12 = env.limit - env.cursor;
+                'lab16: loop {
+                    'lab17: loop {
+                        let v_13 = env.limit - env.cursor;
+                        'lab18: loop {
+                            env.ket = env.cursor;
+                            if (env.cursor - 9 <= env.limit_backward
+                                || (env.current.as_bytes()[(env.cursor - 1) as usize] as u8
+                                    != 175 as u8
+                                    && env.current.as_bytes()[(env.cursor - 1) as usize] as u8
+                                        != 177 as u8))
+                            {
+                                break 'lab18;
+                            }
+
+                            among_var = env.find_among_b(A_4, context);
+                            if among_var == 0 {
+                                break 'lab18;
+                            }
+                            env.bra = env.cursor;
+                            match among_var {
+                                1 => {
+                                    env.slice_from("\u{62E}\u{628}\u{631}");
+                                }
+                                2 => {
+                                    env.slice_from("\u{627}\u{633}\u{62A}\u{627}\u{62F}");
+                                }
+                                _ => (),
+                            }
+                            break 'lab17;
+                        }
+                        env.cursor = env.limit - v_13;
+                        if env.cursor < i_p1 {
+                            break 'lab16;
+                        }
+                        let v_14 = env.limit_backward;
+                        env.limit_backward = i_p1;
+                        env.ket = env.cursor;
+                        among_var = env.find_among_b(A_5, context);
+                        if among_var == 0 {
+                            env.limit_backward = v_14;
+                            break 'lab16;
+                        }
+                        env.bra = env.cursor;
+                        match among_var {
+                            1 => {
+                                env.slice_del();
+                            }
+                            2 => {
+                                if env.cursor <= env.limit_backward {
+                                    env.limit_backward = v_14;
+                                    break 'lab16;
+                                }
+                                env.slice_del();
+                            }
+                            _ => (),
+                        }
+                        env.limit_backward = v_14;
+                        break 'lab17;
+                    }
+                    break 'lab15;
+                }
+                env.cursor = env.limit - v_12;
+                'lab19: loop {
+                    let v_15 = env.limit - env.cursor;
+                    'lab20: loop {
+                        env.ket = env.cursor;
+                        if env.find_among_b(A_6, context) == 0 {
+                            break 'lab20;
+                        }
+                        env.bra = env.cursor;
+                        if i_p1 > env.cursor {
+                            break 'lab20;
+                        }
+                        env.slice_del();
+                        break 'lab19;
+                    }
+                    env.cursor = env.limit - v_15;
+                    env.ket = env.cursor;
+                    among_var = env.find_among_b(A_7, context);
+                    if among_var == 0 {
+                        break 'lab11;
+                    }
+                    env.bra = env.cursor;
+                    match among_var {
+                        1 => {
+                            if !b_remove_verb_person_endings {
+                                break 'lab11;
+                            }
+                            if i_p1 > env.cursor {
+                                break 'lab11;
+                            }
+                            env.slice_del();
+                        }
+                        2 => {
+                            env.slice_from("\u{631}\u{641}\u{62A}");
+                        }
+                        3 => {
+                            if i_p1 > env.cursor {
+                                break 'lab11;
+                            }
+                            env.slice_del();
+                            b_remove_verb_person_endings = true;
+                        }
+                        4 => {
+                            if env.cursor <= env.limit_backward {
+                                break 'lab11;
+                            }
+                            env.slice_from("\u{62F}");
+                            b_remove_verb_person_endings = true;
+                        }
+                        5 => {
+                            if env.cursor <= env.limit_backward {
+                                break 'lab11;
+                            }
+                            env.slice_from("\u{62A}");
+                            b_remove_verb_person_endings = true;
+                        }
+                        _ => (),
+                    }
+                    break 'lab19;
+                }
+                break 'lab15;
+            }
+            env.cursor = env.limit - v_9;
+            continue 'replab10;
         }
-        env.cursor = v_3;
-        break 'replab2;
+        env.cursor = env.limit - v_8;
+        break 'replab10;
     }
+    env.cursor = env.limit_backward;
     return true;
 }

@@ -7,7 +7,7 @@
 //! # Usage
 //! ```toml
 //! [dependencies]
-//! rust-stemmers = "^1.0"
+//! snowball_stemmers_rs = "1.0"
 //! ```
 //!
 //! ```rust
@@ -28,8 +28,8 @@ use std::borrow::Cow;
 
 mod snowball;
 
-use snowball::algorithms;
 use snowball::SnowballEnv;
+use snowball::algorithms;
 
 /// Supported algorithms/languages.
 /// See the [Snowball-Website](https://snowballstem.org/) for details.
@@ -73,6 +73,8 @@ pub enum Algorithm {
     Turkish,
     Ukrainian,
     Yiddish,
+    // Append new variants to preserve existing Serde variant indices.
+    EarlyModernEnglish,
 }
 
 /// Snowball stemmer implementation
@@ -107,6 +109,9 @@ impl Stemmer {
             },
             Algorithm::DutchPorter => Stemmer {
                 stemmer: algorithms::dutch_porter::stem,
+            },
+            Algorithm::EarlyModernEnglish => Stemmer {
+                stemmer: algorithms::earlymodernenglish::stem,
             },
             Algorithm::English => Stemmer {
                 stemmer: algorithms::english::stem,
